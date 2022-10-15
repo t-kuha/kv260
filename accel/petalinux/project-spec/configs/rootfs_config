@@ -2101,21 +2101,21 @@ CONFIG_libdfx=y
 #
 # xrt
 #
-# CONFIG_xrt is not set
-# CONFIG_xrt-dev is not set
+CONFIG_xrt=y
+CONFIG_xrt-dev=y
 # CONFIG_xrt-dbg is not set
 
 #
 # zocl
 #
-# CONFIG_zocl is not set
+CONFIG_zocl=y
 # CONFIG_zocl-dev is not set
 # CONFIG_zocl-dbg is not set
 
 #
 # opencl-clhpp
 #
-# CONFIG_opencl-clhpp-dev is not set
+CONFIG_opencl-clhpp-dev=y
 
 #
 # opencl-headers
@@ -2638,7 +2638,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # packagegroup-core-tools-debug 
 #
-# CONFIG_packagegroup-core-tools-debug is not set
+CONFIG_packagegroup-core-tools-debug=y
 # CONFIG_packagegroup-core-tools-debug-dev is not set
 # CONFIG_packagegroup-core-tools-debug-dbg is not set
 
@@ -4055,7 +4055,7 @@ CONFIG_u-boot-tools=y
 #
 # packagegroup-petalinux-utils 
 #
-# CONFIG_packagegroup-petalinux-utils is not set
+CONFIG_packagegroup-petalinux-utils=y
 # CONFIG_packagegroup-petalinux-utils-dbg is not set
 # CONFIG_packagegroup-petalinux-utils-dev is not set
 
@@ -4104,7 +4104,12 @@ CONFIG_Init-manager-systemd=y
 #
 # user packages 
 #
+CONFIG_fuse-exfat=y
 # CONFIG_gpio-demo is not set
+CONFIG_opencl-headers-dev=y
+CONFIG_packagegroup-core-full-cmdline=y
+CONFIG_packagegroup-petalinux-jupyter=y
+CONFIG_packagegroup-petalinux-som=y
 # CONFIG_peekpoke is not set
 
 #

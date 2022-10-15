@@ -3,3 +3,12 @@
 
 CONFIG_gpio-demo
 CONFIG_peekpoke
+CONFIG_packagegroup-petalinux-som
+CONFIG_packagegroup-core-full-cmdline
+CONFIG_packagegroup-petalinux-jupyter
+CONFIG_xrt
+CONFIG_xrt-dev
+CONFIG_zocl
+CONFIG_opencl-clhpp-dev
+CONFIG_opencl-headers-dev
+CONFIG_fuse-exfat
