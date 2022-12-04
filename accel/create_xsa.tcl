@@ -50,7 +50,7 @@ set_property platform.design_intent.datacenter {false} [current_project]
 set_property platform.default_output_type {sd_card} [current_project]
 set_property platform.uses_pr {false} [current_project]
 # write_hw_platform -fixed -force -include_bit -file ${PRJ_NAME}.xsa
-write_hw_platform -fixed -force -file ${PRJ_NAME}.xsa
+write_hw_platform -force -file ${PRJ_NAME}.xsa
 validate_hw_platform ${PRJ_NAME}.xsa
 
 # Finish - close project
