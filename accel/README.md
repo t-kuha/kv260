@@ -6,13 +6,13 @@
 
 ```shell-session
 $ vivado -notrace -nojournal -mode batch -source create_xsa.tcl
-$ xsct create_pfm.tcl
+$ xsct -nodisp -sdx create_pfm.tcl
 ```
 
 ### Generate device tree overlay
 
 ```shell-session
-$ xsct create_dtbo.tcl
+$ xsct -nodisp create_dtbo.tcl
 $ bootgen -w -arch zynqmp -process_bitstream bin -image src/bootgen.bif
 ```
 
