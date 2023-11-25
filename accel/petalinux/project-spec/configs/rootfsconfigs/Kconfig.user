@@ -1,4 +1,8 @@
 menu "user packages " 
+config fuse-exfat  
+	 bool "fuse-exfat"
+	 help
+	
 config gpio-demo  
 	 bool "gpio-demo"
 	 help
@@ -9,6 +13,10 @@ config packagegroup-petalinux-kria
 	
 config peekpoke  
 	 bool "peekpoke"
+	 help
+	
+config rtl8188eus  
+	 bool "rtl8188eus"
 	 help
 	
 endmenu

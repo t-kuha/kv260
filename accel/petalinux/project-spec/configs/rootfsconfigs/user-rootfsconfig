@@ -3,5 +3,8 @@
 
 CONFIG_gpio-demo
 CONFIG_peekpoke
+CONFIG_fuse-exfat
 
 CONFIG_packagegroup-petalinux-kria
+
+CONFIG_rtl8188eus

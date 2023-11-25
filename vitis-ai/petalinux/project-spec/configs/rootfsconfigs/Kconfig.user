@@ -15,6 +15,10 @@ config peekpoke
 	 bool "peekpoke"
 	 help
 	
+config rtl8188eus  
+	 bool "rtl8188eus"
+	 help
+	
 config target-factory  
 	 bool "target-factory"
 	 help
