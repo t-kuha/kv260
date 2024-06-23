@@ -1,0 +1,22 @@
+# Xilinx
+.Xil
+*.log
+*.jou
+*.xsa
+*.bsp
+sd_card
+BOOT.BIN
+
+# data
+.vscode
+*.zip
+*.tar.*
+
+# PetaLinux
+*/petalinux/project-spec/meta-user/recipes-connectivity/wpa-supplicant
+
+# temp.
+_*
+
+quick/xilinx-kv260-starterkit-*
+quick/psu_*
