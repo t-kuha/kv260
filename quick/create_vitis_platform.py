@@ -7,7 +7,7 @@ import vitis
 
 
 PFM_NAME = 'kv260'
-top_dir = os.path.dirname(__file__)
+top_dir = os.path.dirname(os.path.abspath(__file__))
 pfm_dir = os.path.join(top_dir, '_pfm')
 boot_dir = os.path.join(top_dir, '_boot')
 sd_dir = os.path.join(top_dir, '_sd_dir')
