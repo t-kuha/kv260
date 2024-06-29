@@ -1,0 +1,40 @@
+"""Create vector addition app."""
+import argparse
+import os
+import shutil
+
+import vitis
+
+# settings
+top_dir = os.path.dirname(os.path.abspath(__file__))
+ws_dir = os.path.join(top_dir, '_vitis-ws')
+pfm_dir = os.path.join(top_dir, '_pfm')
+
+# parser = argparse.ArgumentParser()
+# parser.add_argument('sysroot', type=str, help='path to sysroot')
+# args = parser.parse_args()
+
+# check input
+assert os.path.exists(pfm_dir)
+# assert os.path.exists(args.sysroot)
+
+if os.path.exists(ws_dir):
+    print('[INFO] removing existing workspace...')
+    shutil.rmtree(ws_dir) 
+
+# start building
+client = vitis.create_client()
+
+status = client.set_workspace(path=ws_dir)
+assert (status)
+status = client.add_platform_repos(platform=os.path.join(pfm_dir, 'kv260', 'export', 'kv260'))
+assert (status)
+proj = client.create_sys_project(
+    name='vadd',
+    platform=os.path.join(pfm_dir, 'kv260', 'export', 'kv260', 'kv260.xpfm'),
+    template='installed_examples/vadd'
+)
+# proj = client.get_sys_project(name='vadd')
+proj.build(target='hw')
+
+vitis.dispose()
