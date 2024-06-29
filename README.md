@@ -1,3 +1,5 @@
 # Projects for Xilinx Kria KV260 Vision AI Starter Kit
 
-- For actual code, check out a branch corresponding to the Xilinx tool version (e.g. 2022.2)
+## Projects
+
+- __quick__: quick(est) way to building Vitis acceleration app
