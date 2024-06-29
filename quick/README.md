@@ -22,20 +22,32 @@ $ xsct -nodisp create_dtbo.tcl
 
 ## Create application (vector addition)
 
+```shell-session
+$ IDE_ZYNQMP_SYSROOT=<path to sysroot> vitis -s create_vadd_app.py
+```
 
 ## Prepare SD card
 
-- copy the following files from ``xilinx-kv260-starterkit-2024.1``
-  - boot.scr
-  - Image
-  - ramdisk.cpio.gz.u-boot
-  - system-zynqmp-sck-kv-g-revB.dtb
-  - system.dtb
+- copy the contents of ``_pfm/kv260/export/kv260/sw/linux_psu_cortexa53/image`` into boot partition:
+- extract ``quick/xilinx-kv260-starterkit-2024.1/pre-built/linux/images/rootfs.tar.gz`` into rootfs partition
+- copy the application binary &.xclbin into home directory of SD card (``/home/petalinux``)
+  ```shell-session
+  $ cp _vitis-ws/vadd_host/build/hw/vadd_host <rootfs mount point>/home/petalinux/
+  $ cp _vitis-ws/vadd/build/hw/hw_link/binary_container_1.xclbin <rootfs mount point>/home/petalinux/
+  ```
+- copy ``pl.dtbo``, ``src/shell.json``, and .xclbin into SD card as follows:
+  ```shell-session
+  $ sudo mkdir <rootfs mount point>/lib/firmware/xilinx/vadd
+  $ sudo cp pl.dtbo <rootfs mount point>/lib/firmware/xilinx/vadd/vadd.dtbo
+  $ sudo cp src/shell.json <rootfs mount point>/lib/firmware/xilinx/vadd/
+  $ sudo cp _vitis-ws/vadd/build/hw/hw_link/binary_container_1.xclbin <rootfs mount point>/lib/firmware/xilinx/vadd/vadd.bin
 
-- copy ``pl.dtbo``, ``src/shell.json``, and .xclbin into SD card
-- copy the application binary into home directory of SD card (``/home/petalinux``)
+  $ sync
+  ```
 
 ## Run the app
+
+- boot the board & run the following commands:
 
 ```shell-session
 # install required packages (internet connection required)
