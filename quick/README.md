@@ -2,6 +2,10 @@
 
 - create Vitis platform without PetaLinux
 
+## Donwload sysroot
+
+- Download SDK from [AMD Website](https://www.xilinx.com/member/forms/download/xef.html?filename=xilinx-zynqmp-common-v2024.1_05230256.tar.gz) & install sysroot
+
 ## Download & extract BSP
 
 - Download ``xilinx-kv260-starterkit-v2024.1-05230256.bsp`` from [AMD Website](https://www.xilinx.com/member/forms/download/xef.html?filename=xilinx-kv260-starterkit-v2024.1-05230256.bsp)
