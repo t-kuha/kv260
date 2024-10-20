@@ -17,8 +17,8 @@
 
 [clock]
 
-freqHz=200000000:DPUCZDX8G_1.aclk
-freqHz=400000000:DPUCZDX8G_1.ap_clk_2
+freqHz=300000000:DPUCZDX8G_1.aclk
+freqHz=600000000:DPUCZDX8G_1.ap_clk_2
 
 [connectivity]
 
