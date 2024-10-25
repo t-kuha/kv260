@@ -4,7 +4,7 @@ set DT_SRC device-tree-xlnx/
 
 if {[file exists ${DT_SRC}] == 0} {
     # clone device tree repo if necessary
-    exec -ignorestderr git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx_v2023.2
+    exec -ignorestderr git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx_v2024.1
 }
 
 hsi open_hw_design ${XSA_NAME}
