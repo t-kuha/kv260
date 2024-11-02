@@ -59,8 +59,6 @@ platform = client.create_platform_component(
 domain = platform.get_domain(name='linux_psu_cortexa53')
 status = domain.update_name(new_name='xrt')
 assert status
-status = domain.generate_bif()
-assert status
 status = domain.set_boot_dir(boot_dir)
 assert status
 status = domain.set_sd_dir(sd_dir)
