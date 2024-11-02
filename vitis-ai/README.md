@@ -12,10 +12,13 @@
 $ tar xf DPUCZDX8G.tar.gz 
 $ cp src/dpu_conf.vh DPUCZDX8G/prj/Vitis/dpu_conf.vh 
 $ cp src/prj_config DPUCZDX8G/prj/Vitis/config_file/prj_config
-$ export SDX_PLATFORM=$(pwd)/_pfm/kv260/export/kv260/kv260.xpfm
+$ export SDX_PLATFORM=$(pwd)/_pfm/kv260_vai/export/kv260_vai/kv260_vai.xpfm
 $ pushd DPUCZDX8G/prj/Vitis
 $ make all KERNEL=DPU DEVICE=kv260
 $ popd
+
+# get fingerprint value info
+$ cp DPUCZDX8G/prj/Vitis/binary_container_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/kv260/ip/kv260_DPUCZDX8G_1_0/arch.json .
 ```
 
 ## Prepare SD card
@@ -32,11 +35,13 @@ $ popd
 # rootfs
 $ sudo tar xf xilinx-kv260-starterkit-2023.2/pre-built/linux/images/rootfs.tar.gz -C <path to rootfs partition>
 
-# device tree, xclbin, shell.json
+# copy bitstream, xclbin, device tree, shell.json
+$ bootgen -w -arch zynqmp -process_bitstream bin -image src/bootgen.bif -o dpu.bit.bin
+$ cp DPUCZDX8G/prj/Vitis/binary_container_1/binary_container_1.xclbin <path to boot partition>/dpu.xclbin
 $ sudo mkdir <path to rootfs partition>/lib/firmware/xilinx/dpu
-$ sudo cp pl.dtbo <path to rootfs partition>/lib/firmware/xilinx/dpu/dpu.dtbo
+$ sudo cp DPUCZDX8G/prj/Vitis/binary_container_1/link/vivado/vpl/prj/prj.runs/impl_1/kv260_wrapper.bit.bin <path to rootfs partition>/lib/firmware/xilinx/dpu/dpu.bit.bin
+$ sudo cp dpu.dtbo <path to rootfs partition>/lib/firmware/xilinx/dpu/dpu.dtbo
 $ sudo cp src/shell.json <path to rootfs partition>/lib/firmware/xilinx/dpu/
-$ sudo cp DPUCZDX8G/prj/Vitis/binary_container_1/binary_container_1.xclbin <path to rootfs partition>s/lib/firmware/xilinx/dpu/dpu.bit.bin
 $ sync
 ```
 
@@ -51,8 +56,14 @@ $ sudo dnf install -y xrt vart vitis-ai-library
 - install Python environment
 
 ```shell
-$ pip3 install torch==2.4.1 torchvision==0.19.1 scipy
+$ pip3 install torch==2.4.1 torchvision==0.19.1 scipy tqdm
 $ pip3 cache purge
+```
+
+- edit Vitis AI runtime config if necessary
+
+```shell
+$ vi /etc/vart.conf
 ```
 
 - set up
