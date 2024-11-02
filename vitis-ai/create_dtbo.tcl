@@ -15,4 +15,4 @@ hsi set_property CONFIG.dt_zocl true [hsi::get_os]
 hsi generate_target -dir _devicetree
 hsi close_hw_design [hsi current_hw_design]
 
-exec -ignorestderr dtc -o pl.dtbo _devicetree/pl.dtsi
+exec -ignorestderr dtc -o dpu.dtbo _devicetree/pl.dtsi
