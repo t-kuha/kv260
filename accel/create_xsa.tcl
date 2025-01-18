@@ -39,11 +39,11 @@ save_bd_design
 generate_target all [get_files [current_bd_design].bd]
 
 # generate bitstream
-launch_runs -jobs 2 synth_1
+launch_runs synth_1
 wait_on_run synth_1
-launch_runs -jobs 2 impl_1
+launch_runs impl_1
 wait_on_run impl_1
-launch_runs -jobs 2 impl_1 -to_step write_bitstream
+launch_runs impl_1 -to_step write_bitstream
 wait_on_run impl_1
 
 # Export .xsa file
