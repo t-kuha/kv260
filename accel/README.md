@@ -39,7 +39,6 @@ $ xsct -nodisp create_dtbo.tcl
 
 ```shell
 $ sudo xmutil listapps
-$ sudo xmutil unloadapp 
 $ sudo xmutil loadapp kv260-vadd
 
 $ kv260-vadd /usr/lib/firmware/xilinx/kv260-vadd/kv260-vadd.bin
