@@ -7,5 +7,3 @@ CONFIG_peekpoke
 CONFIG_fuse-exfat
 CONFIG_rtl8188eus
 CONFIG_packagegroup-kria
-
-CONFIG_kv260-vadd
