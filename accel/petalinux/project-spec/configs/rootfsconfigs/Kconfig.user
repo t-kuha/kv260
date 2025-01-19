@@ -7,6 +7,10 @@ config gpio-demo
 	 bool "gpio-demo"
 	 help
 	
+config kv260-vadd  
+	 bool "kv260-vadd"
+	 help
+	
 config packagegroup-kria  
 	 bool "packagegroup-kria"
 	 help

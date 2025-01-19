@@ -3907,7 +3907,7 @@ CONFIG_u-boot-tools=y
 #
 # packagegroup-lmsensors 
 #
-CONFIG_packagegroup-lmsensors=y
+# CONFIG_packagegroup-lmsensors is not set
 # CONFIG_packagegroup-lmsensors-dbg is not set
 # CONFIG_packagegroup-lmsensors-dev is not set
 
@@ -4003,6 +4003,7 @@ CONFIG_Init-manager-systemd=y
 #
 CONFIG_fuse-exfat=y
 # CONFIG_gpio-demo is not set
+CONFIG_kv260-vadd=y
 CONFIG_packagegroup-kria=y
 # CONFIG_peekpoke is not set
 CONFIG_rtl8188eus=y
