@@ -1,8 +1,8 @@
 '''Create acceleration platform using BSP from AMD/Xilinx.
 '''
-# import argparse
 import os
 import shutil
+
 import vitis
 
 
@@ -37,7 +37,6 @@ shutil.copy(
     os.path.join(boot_dir, 'u-boot.elf')
 )
 
-# for fn in ['boot.scr', 'Image', 'ramdisk.cpio.gz.u-boot', 'system-zynqmp-sck-kv-g-revB.dtb', 'system.dtb']:
 for fn in ['boot.scr', 'Image', 'ramdisk.cpio.gz.u-boot', 'system.dtb']:
     shutil.copy(os.path.join(images_dir_path, fn), sd_dir)
 
