@@ -3,7 +3,7 @@ SRC_URI += " \
     file://binary_container_1.xclbin \
     file://pl.dtbo \
     file://shell.json \
-    file://vadd \
+    file://kv260-vadd \
     file://vadd_host \
 "
 
@@ -12,7 +12,7 @@ do_install:append () {
 
     # add vadd
     install -d ${D}${sysconfdir}/dfx-mgrd
-    install -m 0644 ${WORKDIR}/vadd ${D}${sysconfdir}/dfx-mgrd/kv260-vadd
+    install -m 0644 ${WORKDIR}/kv260-vadd ${D}${sysconfdir}/dfx-mgrd/kv260-vadd
     install -d ${D}${libdir}/firmware/xilinx/kv260-vadd
     install -d ${D}${bindir}
     install -m 0755 ${WORKDIR}/vadd_host ${D}${bindir}/kv260-vadd
