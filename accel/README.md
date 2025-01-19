@@ -35,13 +35,28 @@ $ vitis -s create_vitis_platform.py
 $ xsct -nodisp create_dtbo.tcl
 ```
 
-## Create application (vector addition)
+## Run
+
+```shell
+$ sudo xmutil listapps
+$ sudo xmutil unloadapp 
+$ sudo xmutil loadapp kv260-vadd
+
+$ kv260-vadd /usr/lib/firmware/xilinx/kv260-vadd/kv260-vadd.bin
+INFO: Reading /usr/lib/firmware/xilinx/kv260-vadd/kv260-vadd.bin
+Loading: '/usr/lib/firmware/xilinx/kv260-vadd/kv260-vadd.bin'
+Trying to program device[0]: edge
+Device[0]: program successful!
+TEST PASSED
+```
+
+***
+
+## How to create application (vector addition)
 
 ```shell
 $ IDE_ZYNQMP_SYSROOT=<path to sysroot> vitis -s create_vadd_app.py
 ```
-
-***
 
 ## How to create PetaLinux project from scratch
 
