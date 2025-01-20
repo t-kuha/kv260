@@ -4003,6 +4003,7 @@ CONFIG_Init-manager-systemd=y
 #
 CONFIG_fuse-exfat=y
 # CONFIG_gpio-demo is not set
+CONFIG_kv260-vadd=y
 CONFIG_packagegroup-kria=y
 # CONFIG_peekpoke is not set
 CONFIG_rtl8188eus=y

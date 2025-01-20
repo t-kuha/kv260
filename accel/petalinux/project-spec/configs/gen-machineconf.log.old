@@ -1,14 +1,14 @@
-2025-01-19 11:27:02,727 - [DEBUG] Using xsct from : /home/imagingtechnerd/amd/PetaLinux/2024.2/components/xsct/bin/xsct
-2025-01-19 11:27:02,727 - [INFO] Getting Platform info from HW file
-2025-01-19 11:27:02,727 - [DEBUG] Using the soc_family specified by user:zynqmp
-2025-01-19 11:27:02,793 - [DEBUG] Hardware Configuration:
-2025-01-19 11:27:02,793 - [DEBUG] MACHINE     = "None"
-2025-01-19 11:27:02,793 - [DEBUG] DEVICE_ID   = "xck26"
-2025-01-19 11:27:02,793 - [DEBUG] SOC_FAMILY  = "zynqmp"
-2025-01-19 11:27:02,793 - [DEBUG] SOC_VARIANT = "ev"
-2025-01-19 11:27:02,793 - [INFO] Silentconfig project
-2025-01-19 11:27:02,793 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/config conf /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/configs/Kconfig
-2025-01-19 11:27:02,801 - [DEBUG] *
+2025-01-20 13:08:54,217 - [DEBUG] Using xsct from : /home/imagingtechnerd/amd/PetaLinux/2024.2/components/xsct/bin/xsct
+2025-01-20 13:08:54,217 - [INFO] Getting Platform info from HW file
+2025-01-20 13:08:54,217 - [DEBUG] Using the soc_family specified by user:zynqmp
+2025-01-20 13:08:54,275 - [DEBUG] Hardware Configuration:
+2025-01-20 13:08:54,276 - [DEBUG] MACHINE     = "None"
+2025-01-20 13:08:54,276 - [DEBUG] DEVICE_ID   = "xck26"
+2025-01-20 13:08:54,276 - [DEBUG] SOC_FAMILY  = "zynqmp"
+2025-01-20 13:08:54,276 - [DEBUG] SOC_VARIANT = "ev"
+2025-01-20 13:08:54,276 - [INFO] Silentconfig project
+2025-01-20 13:08:54,276 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/config conf /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/configs/Kconfig
+2025-01-20 13:08:54,284 - [DEBUG] *
 * PetaLinux System Configuration
 *
 ZYNQMP Configuration (SYSTEM_ZYNQMP) [Y/?] y
@@ -281,9 +281,9 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/config
 #
-2025-01-19 11:27:02,866 - [INFO] Silentconfig rootfs
-2025-01-19 11:27:02,866 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/rootfs_config conf /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/rootfsconfigs/Kconfig
-2025-01-19 11:27:02,883 - [DEBUG] *
+2025-01-20 13:08:54,344 - [INFO] Silentconfig rootfs
+2025-01-20 13:08:54,344 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/rootfs_config conf /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/rootfsconfigs/Kconfig
+2025-01-20 13:08:54,358 - [DEBUG] *
 * Configuration
 *
 *
@@ -3766,6 +3766,7 @@ choice[1-2]: *
 *
 fuse-exfat (fuse-exfat) [Y/n/?] 
 gpio-demo (gpio-demo) [N/y/?] 
+kv260-vadd (kv260-vadd) [Y/n/?] 
 packagegroup-kria (packagegroup-kria) [Y/n/?] 
 peekpoke (peekpoke) [N/y/?] 
 rtl8188eus (rtl8188eus) [Y/n/?] 
@@ -3779,7 +3780,7 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/imagingtechnerd/kv260/accel/petalinux/project-spec/configs/rootfs_config
 #
-2025-01-19 11:27:02,890 - [INFO] Generating configuration files
-2025-01-19 11:27:02,903 - [DEBUG] No multilibs enabled.
-2025-01-19 11:27:02,903 - [DEBUG] No multilibs enabled.
-2025-01-19 11:27:02,932 - [DEBUG] Shutting down bitbake
+2025-01-20 13:08:54,365 - [INFO] Generating configuration files
+2025-01-20 13:08:54,377 - [DEBUG] No multilibs enabled.
+2025-01-20 13:08:54,377 - [DEBUG] No multilibs enabled.
+2025-01-20 13:08:54,404 - [DEBUG] Shutting down bitbake
