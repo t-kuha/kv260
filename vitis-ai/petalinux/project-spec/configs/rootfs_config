@@ -2098,7 +2098,7 @@ CONFIG_libdfx=y
 #
 # xrt
 #
-# CONFIG_xrt is not set
+CONFIG_xrt=y
 # CONFIG_xrt-dev is not set
 # CONFIG_xrt-dbg is not set
 
