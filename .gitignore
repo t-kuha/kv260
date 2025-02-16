@@ -16,5 +16,6 @@ BOOT.BIN
 */petalinux/project-spec/meta-user/recipes-connectivity/wpa-supplicant
 
 # temp.
+vitis-ai/DPUCZDX8G
 _*
 
