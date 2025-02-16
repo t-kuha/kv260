@@ -1,4 +1,4 @@
-'''Create acceleration platform using BSP from AMD/Xilinx.
+'''Create acceleration platform for Vitis-AI.
 '''
 import os
 import shutil
@@ -8,35 +8,13 @@ import vitis
 PFM_NAME = 'kv260_vai'
 top_dir = os.path.dirname(__file__)
 pfm_dir = os.path.join(top_dir, '_pfm')
-boot_dir = os.path.join(top_dir, '_boot')
-sd_dir = os.path.join(top_dir, '_sd_dir')
 hw_xsa_path = os.path.join(top_dir, 'hw.xsa')
-hw_emu_xsa_path = os.path.join(top_dir, 'hw_emu.xsa')
-
-# path to source files
-images_dir_path = os.path.join(top_dir, 'petalinux', 'images', 'linux')
 
 # prepare required files
-for d in [pfm_dir, boot_dir, sd_dir]:
+for d in [pfm_dir]:
     if os.path.exists(d):
         shutil.rmtree(d)
     os.mkdir(d)
-
-for fn in ['bl31.elf', 'pmufw.elf']:
-    shutil.copy(os.path.join(images_dir_path, fn), boot_dir)
-
-# need renaming
-shutil.copy(
-    os.path.join(images_dir_path, 'zynqmp_fsbl.elf'),
-    os.path.join(boot_dir, 'fsbl.elf')
-)
-shutil.copy(
-    os.path.join(images_dir_path, 'u-boot-dtb.elf'),
-    os.path.join(boot_dir, 'u-boot.elf')
-)
-
-for fn in ['boot.scr', 'Image', 'ramdisk.cpio.gz.u-boot']:  #, 'system-zynqmp-sck-kv-g-revB.dtb', 'system.dtb']:
-    shutil.copy(os.path.join(images_dir_path, fn), sd_dir)
 
 # generate platform
 client = vitis.create_client()
@@ -44,18 +22,11 @@ client.set_workspace(path=pfm_dir)
 
 platform = client.create_platform_component(
     name=PFM_NAME, hw=hw_xsa_path, desc='KV260 Vitis acceleration platform',
-    os='linux', cpu='psu_cortexa53', no_boot_bsp=True,
-    emulation_xsa_path=hw_emu_xsa_path
+    os='linux', cpu='psu_cortexa53', no_boot_bsp=True
 )
 
 domain = platform.get_domain(name='linux_psu_cortexa53')
-status = domain.update_name(new_name='xrt')
-assert status
-status = domain.add_boot_dir(images_dir_path)
-status = domain.add_boot_dir(boot_dir)
-assert status
-status = domain.set_sd_dir(sd_dir)
-assert status
+assert domain.update_name(new_name='xrt')
 platform = client.get_platform_component(name=PFM_NAME)
 
 platform.remove_boot_bsp()

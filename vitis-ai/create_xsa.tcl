@@ -34,14 +34,6 @@ validate_bd_design
 save_bd_design
 generate_target all [get_files [current_bd_design].bd]
 
-# generate bitstream
-# launch_runs synth_1
-# wait_on_run synth_1
-# launch_runs impl_1
-# wait_on_run impl_1
-# launch_runs impl_1 -to_step write_bitstream
-# wait_on_run impl_1
-
 # Export .xsa file
 set_property platform.design_intent.embedded {true} [current_project]
 set_property platform.design_intent.server_managed {false} [current_project]
@@ -53,7 +45,6 @@ set_property platform.uses_pr {false} [current_project]
 write_hw_platform -hw -force -file hw.xsa
 write_hw_platform -hw_emu -force -file hw_emu.xsa
 validate_hw_platform hw.xsa
-validate_hw_platform hw_emu.xsa
 
 # Finish - close project
 close_project
