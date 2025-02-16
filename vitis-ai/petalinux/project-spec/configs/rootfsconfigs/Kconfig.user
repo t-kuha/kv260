@@ -7,6 +7,10 @@ config gpio-demo
 	 bool "gpio-demo"
 	 help
 	
+config kv260-dpu  
+	 bool "kv260-dpu"
+	 help
+	
 config packagegroup-petalinux-kria  
 	 bool "packagegroup-petalinux-kria"
 	 help
