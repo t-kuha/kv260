@@ -1,4 +1,4 @@
-// bootgen -w -arch zynqmp -process_bitstream bin -image src/bootgen.bif -o dpu.bit.bin
+// bootgen -w -arch zynqmp -process_bitstream bin -image src/bootgen.bif
 all:{
     DPUCZDX8G/prj/Vitis/binary_container_1/link/vivado/vpl/prj/prj.runs/impl_1/kv260_wrapper.bit
 }
