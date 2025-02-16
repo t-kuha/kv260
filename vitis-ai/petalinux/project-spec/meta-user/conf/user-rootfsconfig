@@ -14,3 +14,5 @@ CONFIG_vitis-ai-library
 CONFIG_xir
 
 CONFIG_rtl8188eus
+
+CONFIG_kv260-dpu
