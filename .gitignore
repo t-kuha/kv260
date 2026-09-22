@@ -1,0 +1,22 @@
+# Xilinx
+.Xil
+.wsdata
+*.log
+*.jou
+*.xsa
+*.bsp
+sd_card
+BOOT.BIN
+BOOT.bin
+
+# data
+.vscode
+*.zip
+*.tar.*
+
+# temp.
+.sumi
+_*
+
+quick/xilinx-kv260-starterkit-*
+quick/psu_*
