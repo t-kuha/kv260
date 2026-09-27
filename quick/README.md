@@ -1,5 +1,7 @@
 # Quick bring-up
 
+- Uses `kv260_base` platform installed along with Vitis to skip platform creation process entirely.
+
 ## Board set-up
 
 - BOOT firmware: v1.07
@@ -9,25 +11,21 @@
 
 ## Get sysroot
 
-- Zynq MP common image
+- [Zynq MP common image](https://www.amd.com/en/support/downloads/adaptive-socs-and-fpgas/development-tools/2026-1.html#gd-group-0-heading)
 
 ```shell
 $ tar xf xilinx-zynqmp-common-v2026.1_06092129.tar.gz ~/vitis
 ```
 
-## Vitis acceleration platform
+## Acceleration app
 
 ```shell
-$ git clone --recursive https://github.com/Xilinx/kria-vitis-platforms.git -b v1.2
-
-# make platform
-$ make platform PFM=kv260_vcuDecode_vmixDP [JOBS=4]
 $ IDE_ZYNQMP_SYSROOT=~/vitis/sysroots/cortexa72-cortexa53-amd-linux/ vitis -s create_vadd_app.py
 ```
 
 ## Running the app
 
-- Colelct necessary files:
+- Collect necessary files:
 
 ```shell
 $ cp ${XILINX_VITIS}/base_platforms/kv260_base/sw/boot/pl.dtbo release/
