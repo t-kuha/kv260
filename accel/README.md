@@ -17,8 +17,15 @@ $ cd ..
 ```
 
 The EDF image uses a separate PL overlay for application hardware. The Vitis
-platform script below still expects the PetaLinux-style boot-file directory;
-its boot-file staging must be adapted before using the EDF artifacts.
+platform script reads `edf/images`, stages the EDF firmware in `_boot` with the
+filenames expected by Vitis, and stages `boot.scr`, `Image`, and `system.dtb` in
+`_sd_dir`. Build EDF before running the platform script.
+
+Write the EDF `edf-linux-disk-image-kria-*.wic.xz` image to the microSD card as
+described in [the EDF instructions](edf/README.md). Its boot script loads the
+kernel from `/boot/Image` on root partition 3; copying `_sd_dir` to a blank card
+does not provide that partition or the root filesystem. EDF does not use the
+PetaLinux ramdisk.
 
 - platform
 
