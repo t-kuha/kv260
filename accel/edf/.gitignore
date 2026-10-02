@@ -1,0 +1,6 @@
+_work/
+/images
+bitbake.apparmor
+meta-kv260/conf/dts/
+meta-kv260/conf/machine/
+meta-kv260/conf/multiconfig/

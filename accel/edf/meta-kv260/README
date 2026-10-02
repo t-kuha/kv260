@@ -1,0 +1,5 @@
+KV260 acceleration BSP layer
+============================
+
+The layer's generated machine configurations and device trees are created
+from accel/hw.xsa by ../build.sh configure. See ../README.md for the EDF flow.
