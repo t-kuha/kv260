@@ -38,13 +38,21 @@ validate_bd_design
 save_bd_design
 generate_target all [get_files [current_bd_design].bd]
 
-# generate bitstream
+proc wait_for_successful_run {run_name stage} {
+    wait_on_run $run_name
+    set run [get_runs $run_name]
+    if {[get_property PROGRESS $run] ne "100%"} {
+        error "$stage failed ($run_name): [get_property STATUS $run]"
+    }
+}
+
+# Generate bitstream
 launch_runs synth_1
-wait_on_run synth_1
+wait_for_successful_run synth_1 Synthesis
 launch_runs impl_1
-wait_on_run impl_1
+wait_for_successful_run impl_1 Implementation
 launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
+wait_for_successful_run impl_1 "Bitstream generation"
 
 # Export .xsa file
 set_property platform.design_intent.embedded {true} [current_project]
